@@ -1,5 +1,7 @@
 // Import the functions you need from the SDKs you need
 const { initializeApp } = require('firebase/app');
+const { getFirestore, collection, getDoc, getDocs } = require('firebase/firestore');
+const { getAuth } = require('firebase/auth');
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,4 +15,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// Initialize Firestore
+const db = getFirestore(app);
+// Initialize Authentication
+const auth = getAuth(app);
+
+// collection reference
+const usersCollection = collection(db, 'users');
+
+getDocs(usersCollection).then((querySnapshot) => {
+  for (const doc of querySnapshot.docs) {
+    console.log(doc.id, ' => ', doc.data());
+  }
+});
 
