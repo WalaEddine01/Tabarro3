@@ -1,80 +1,30 @@
+// Import the functions you need from the SDKs you need
+const { initializeApp } = require('firebase/app');
+const { getFirestore, collection, getDoc, getDocs } = require('firebase/firestore');
+const { getAuth } = require('firebase/auth');
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: 'AIzaSyB7dTxA5LTDSKAFTlyJ3l_YYeMikxqIWGc',
+  authDomain: 'tabaro3-9ce2a.firebaseapp.com',
+  projectId: 'tabaro3-9ce2a',
+  storageBucket: 'tabaro3-9ce2a.appspot.com',
+  messagingSenderId: '1019511077492',
+  appId: '1:1019511077492:web:a88b77c611834300c9ef21'
+};
+
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(app);
-const auth = firebase.auth(app);
+const app = initializeApp(firebaseConfig);
+// Initialize Firestore
+const db = getFirestore(app);
+// Initialize Authentication
+const auth = getAuth(app);
 
-// Collection reference
-const donorsCollection = db.collection('donors');
+// collection reference
+const usersCollection = collection(db, 'users');
 
-// Retrieve data
-function getDonors() {
-    donorsCollection.get()
-        .then(snapshot => {
-            let donors = [];
-            snapshot.docs.forEach(doc => {
-                donors.push({ ...doc.data(), id: doc.id });
-            });
-            console.log('Donors:', donors);
-        })
-        .catch(error => {
-            console.error('Error getting donors:', error);
-        });
-}
-
-// Add donor
-function addDonor(name, sex, age, bloodType, phone, address) {
-    donorsCollection.add({ name, sex, age, bloodType, phone, address })
-        .then(() => {
-            console.log('Donor added successfully');
-            getDonors(); // Refresh donor list
-        })
-        .catch(error => {
-            console.error('Error adding donor:', error);
-        });
-}
-
-// Delete donor
-function deleteDonor(donorId) {
-    donorsCollection.doc(donorId).delete()
-        .then(() => {
-            console.log('Donor deleted successfully');
-            getDonors(); // Refresh donor list
-        })
-        .catch(error => {
-            console.error('Error deleting donor:', error);
-        });
-}
-
-// Event listeners
-const addForm = document.querySelector('.add');
-addForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const name = addForm.name.value.trim();
-    const sex = addForm.sex.value.trim();
-    const age = addForm.age.value.trim();
-    const bloodType = addForm.bloodType.value.trim();
-    const phone = addForm.phone.value.trim();
-    const address = addForm.address.value.trim();
-
-    if (name !== '' && sex !== '' && age !== '' && bloodType !== '' && phone !== '' && address !== '') {
-        addDonor(name, sex, age, bloodType, phone, address);
-        addForm.reset();
-    } else {
-        console.error('Please fill out all fields');
-    }
+getDocs(usersCollection).then((querySnapshot) => {
+  for (const doc of querySnapshot.docs) {
+    console.log(doc.id, ' => ', doc.data());
+  }
 });
-
-const deleteForm = document.querySelector('.delete');
-deleteForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const donorId = deleteForm.id.value.trim();
-    if (donorId !== '') {
-        deleteDonor(donorId);
-        deleteForm.reset();
-    } else {
-        console.error('Please enter a donor ID');
-    }
-});
-
-// Initial load of donors
-getDonors();
