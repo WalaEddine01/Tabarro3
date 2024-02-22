@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 const { initializeApp } = require('firebase/app');
 const { getFirestore, collection, getDoc, getDocs } = require('firebase/firestore');
-const { getAuth } = require('firebase/auth');
+const { getAuth, signInWithEmailAndPassword, connectAuthEmulator } = require('firebase/auth');
+const { txtEmail, txtPassword } = require('./ui');
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,11 +21,18 @@ const db = getFirestore(app);
 // Initialize Authentication
 const auth = getAuth(app);
 
-// collection reference
-const usersCollection = collection(db, 'users');
+connectAuthEmulator(auth, 'http://localhost:9099');
+const signIn = async () => {
+    const email = txtEmail.value;
+    const password = txtPassword.value;
 
-getDocs(usersCollection).then((querySnapshot) => {
-  for (const doc of querySnapshot.docs) {
-    console.log(doc.id, ' => ', doc.data());
-  }
-});
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log(user);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+btnlogin.addEventListener('click', signIn);
