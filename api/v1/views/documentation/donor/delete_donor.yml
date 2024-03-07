@@ -1,0 +1,15 @@
+    Deletes a donor
+    ---
+    tags:
+      - Donor
+    parameters:
+      - name: donor_id
+        in: path
+        type: string
+        required: false
+        description: The unique id of the donor
+    responses:
+      404:
+        description: donor not found!
+      200:
+        description: request executed successfully

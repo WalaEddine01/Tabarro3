@@ -1,0 +1,31 @@
+updates donor information
+---
+tags:
+  - Donor
+summary: "Update a donor"
+description: "This endpoint updates a donor."
+operationId: "put_donor"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - name: donor_id
+    in: path
+    type: string
+    required: true
+    description: The id of the donor to update
+  - name: body
+    in: body
+    required: true
+    description: "Donor object that needs to be updated in the database"
+    schema:
+        name: body
+        in: body
+        required: true
+        description: "Donor object that needs to be added to the database"
+responses:
+  404:
+    description: donor not found!
+  200:
+    description: request executed successfully

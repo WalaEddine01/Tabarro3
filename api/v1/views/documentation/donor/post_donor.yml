@@ -1,0 +1,42 @@
+posts a new donor
+---
+tags:
+  - Donor
+summary: "Create a new donor"
+description: "This endpoint creates a new donor."
+operationId: "post_donor"
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+parameters:
+  - name: body
+    in: body
+    required: true
+    description: "Donor object that needs to be added to the database"
+    schema:
+      type: object
+      properties:
+        name:
+          type: string
+          description: "The name of the donor"
+        age:
+          type: integer
+          description: "The age of the donor"
+        phone_number:
+          type: string
+          description: "The phone number of the donor"
+        gender:
+          type: string
+          description: "The gender of the donor"
+        blod_group:
+          type: string
+          description: "The blood group of the donor"
+        location:
+          type: string
+          description: "The location of the donor"
+responses:
+  "201":
+    description: "Successful operation. Donor created."
+  "400":
+    description: "Bad request. Invalid input."
