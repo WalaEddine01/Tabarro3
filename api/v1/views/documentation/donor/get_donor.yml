@@ -40,9 +40,12 @@ responses:
           phone_number:
             type: string
             description: The phone number of the donor
-          blod_group:
+          blood_group:
             type: string
             description: The blood group of the donor
-          location:
+          WilayaID:
             type: string
-            description: The location of the donor
+            description: The WilayaID of the donor
+          BaladyaID:
+            type: string
+            description: The BaladyaID of the donor

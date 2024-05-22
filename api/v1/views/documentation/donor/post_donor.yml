@@ -29,12 +29,15 @@ parameters:
         gender:
           type: string
           description: "The gender of the donor"
-        blod_group:
+        blood_group:
           type: string
           description: "The blood group of the donor"
-        location:
-          type: string
-          description: "The location of the donor"
+        WilayaID:
+            type: string
+            description: The WilayaID of the donor
+        BaladyaID:
+            type: string
+            description: The BaladyaID of the donor
 responses:
   "201":
     description: "Successful operation. Donor created."
