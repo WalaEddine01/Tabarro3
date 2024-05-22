@@ -13,9 +13,10 @@ class Donor(BaseModel, Base):
         name = Column(String(128), nullable=False)
         phone_number = Column(String(128), nullable=False)
         gender = Column(String(128), nullable=False)
-        blod_group = Column(String(128), nullable=False)
-        location = Column(String(128), nullable=False)
+        blood_group = Column(String(128), nullable=False)
         age = Column(Integer, nullable=False)
+        WilayaID = Column(Integer, nullable=False)
+        BaladyaID = Column(Integer, nullable=False)
 
 
     def __init__(self, *args, **kwargs):

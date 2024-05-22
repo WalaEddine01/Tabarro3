@@ -66,6 +66,10 @@ def post_donor():
         abort(400, description="Missing location")
     if 'phone_number' not in request.get_json():
         abort(400, description="Missing phone_number")
+    if 'WilayaID' not in request.get_json():
+        abort(400, description="Missing WilayaID")
+    if 'BaladyaID' not in request.get_json():
+        abort(400, description="Missing BaladyaID")
 
     data = request.get_json()
     donor = Donor(**data)

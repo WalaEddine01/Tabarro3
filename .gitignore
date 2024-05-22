@@ -1,5 +1,5 @@
 node_modules/
-
+.vscode
 package-lock.json
 package.json
 babel.config.js 
@@ -7,3 +7,4 @@ babel.config.js
 comment.sh
 z.sh
 utils.js
+
