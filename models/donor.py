@@ -11,9 +11,9 @@ class Donor(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = 'donors'
         name = Column(String(128), nullable=False)
-        phone_number = Column(String(128), nullable=False)
-        gender = Column(String(128), nullable=False)
-        blood_group = Column(String(128), nullable=False)
+        phone_number = Column(String(20), nullable=False)
+        gender = Column(String(10), nullable=False)
+        blood_group = Column(String(4), nullable=False)
         age = Column(Integer, nullable=False)
         WilayaID = Column(Integer, nullable=False)
         BaladyaID = Column(Integer, nullable=False)
