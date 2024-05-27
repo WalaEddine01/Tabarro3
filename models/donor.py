@@ -4,6 +4,8 @@ import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Integer
 from hashlib import md5
+from collections.abc import namedtuple, Mapping
+from twilio.rest import Client
 
 
 class Donor(BaseModel, Base):
