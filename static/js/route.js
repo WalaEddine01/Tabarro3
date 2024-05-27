@@ -1,5 +1,6 @@
 import { setUpStats } from "./stats.js";
 import { setUpSearch } from "./search.js";
+import { setUpSRegister } from "./search.js";
 
 window.goTo = async (path) => {
     console.log(path);
@@ -37,7 +38,7 @@ const handlers = {
     404: null,
     home: null,
     search: setUpSearch,
-    register: null,
+    register: setUpSRegister,
     login: null,
     stats: setUpStats,
 };
