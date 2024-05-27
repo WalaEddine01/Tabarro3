@@ -1,6 +1,6 @@
 import { setUpStats } from "./stats.js";
 import { setUpSearch } from "./search.js";
-import { setUpSRegister } from "./search.js";
+import { setUpSRegister } from "./register.js";
 
 window.goTo = async (path) => {
     console.log(path);
