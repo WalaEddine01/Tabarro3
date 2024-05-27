@@ -57,9 +57,10 @@ export async function setUpSRegister() {
     const register = document.getElementById("register")
 
     register.onclick = async ()=>{
-        
+        console.log("hello");
         const selectedBaladiaName = baladia_selection.value;
-        const selectedWilayaName = wilaya_selection.value;
+        const selectedWilayaName = wilaya_selection.value; 
+
         const bloodGroup = document.getElementById("bloodType").value;
         const name = document.getElementById("name").value;
         const phoneNumber = document.getElementById("phone-number").value;
@@ -72,9 +73,13 @@ export async function setUpSRegister() {
         const selectedBaladia = bladias.find(baladia => baladia.name === selectedBaladiaName);
         const selectedBaladiaID = selectedBaladia ? selectedBaladia.id : null;
 
+
+        console.log(selectedBaladiaName);
+        console.log(selectedWilayaName);
+
         const data = {
-            BaladyaID: selectedBaladiaID,
-            WilayaID: selectedWilayaID,
+            BaladyaID: selectedBaladiaName,
+            WilayaID: selectedWilayaName,
             blood_group: bloodGroup,
             name: name,
             phone_number: phoneNumber
