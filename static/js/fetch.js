@@ -12,7 +12,7 @@ async function getAllDonors() {
     const response = await fetch("http://localhost:5000/api/v1/donors");
     const json = await response.json();
     return json.map(json=>{
-        return Donor(json.name, json.blood_group, jsong.phone_number , json.WilayaID, json.BaladyaID );
+        return new Donor(json.name, json.blood_group, json.phone_number , json.WilayaID, json.BaladyaID );
     })
     return [
         {
