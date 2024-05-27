@@ -31,7 +31,7 @@ async function getAllDonors() {
             phoneNumber: "5",
         },
     ];
-    const response = await fetch("GET api");
+    const response = await fetch("");
     const json = await response.json();
     return json;
 }

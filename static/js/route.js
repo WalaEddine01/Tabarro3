@@ -24,13 +24,12 @@ window.goTo = async (path) => {
 };
 
 const routes = {
-    404: "/Tabarro3/templates/not_found.html",
-    "/Tabarro3/templates/index.html": "/Tabarro3/templates/home.html",
-    home: "/Tabarro3/templates/home.html",
-    search: "/Tabarro3/templates/search.html",
-    register: "/Tabarro3/templates/register.html",
-    login: "/Tabarro3/templates/login.html",
-    stats: "/Tabarro3/templates/stats.html",
+    404: "./not_found.html",
+        home: "./home.html",
+    search: "./search.html",
+    register: "./register.html",
+    login: "./login.html",
+    stats: "./stats.html",
 };
 window.goTo("home");
 
