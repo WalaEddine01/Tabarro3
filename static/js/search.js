@@ -30,11 +30,11 @@ export async function setUpSearch() {
 
     async function formatDonor(donor) {
         const wilaya = wilayas.find(
-            (wilaya) => wilaya.id === donor.address.wilayaId
+            (wilaya) => wilaya.id == donor.address.wilayaId
         );
         const allBladias = await getBaladias(donor.address.wilayaId);
         const baladia = allBladias.find(
-            (baladia) => baladia.id === donor.address.baladiaId
+            (baladia) => baladia.id == donor.address.baladiaId
         );
 
         const wilayaName = wilaya ? wilaya.name : "Unknown Wilaya";
