@@ -60,10 +60,8 @@ def post_donor():
         abort(400, description="Missing age")
     if 'gender' not in request.get_json():
         abort(400, description="Missing gender")
-    if 'blod_group' not in request.get_json():
+    if 'blood_group' not in request.get_json():
         abort(400, description="Missing blod_group")
-    if 'location' not in request.get_json():
-        abort(400, description="Missing location")
     if 'phone_number' not in request.get_json():
         abort(400, description="Missing phone_number")
     if 'WilayaID' not in request.get_json():
