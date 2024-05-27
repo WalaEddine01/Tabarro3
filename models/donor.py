@@ -12,11 +12,9 @@ class Donor(BaseModel, Base):
         __tablename__ = 'donors'
         name = Column(String(128), nullable=False)
         phone_number = Column(String(20), nullable=False)
-        gender = Column(String(10), nullable=False)
-        blood_group = Column(String(4), nullable=False)
-        age = Column(Integer, nullable=False)
-        WilayaID = Column(Integer, nullable=False)
-        BaladyaID = Column(Integer, nullable=False)
+        blood_group = Column(String(20), nullable=False)
+        WilayaID = Column(String, nullable=False)
+        BaladyaID = Column(String, nullable=False)
 
 
     def __init__(self, *args, **kwargs):

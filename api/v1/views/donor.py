@@ -56,10 +56,6 @@ def post_donor():
         abort(400, description="Not a JSON")
     if 'name' not in request.get_json():
         abort(400, description="Missing name")
-    if 'age' not in request.get_json():
-        abort(400, description="Missing age")
-    if 'gender' not in request.get_json():
-        abort(400, description="Missing gender")
     if 'blood_group' not in request.get_json():
         abort(400, description="Missing blod_group")
     if 'phone_number' not in request.get_json():
@@ -95,3 +91,4 @@ def put_donor(donor_id):
             setattr(donor, key, value)
     storage.save()
     return make_response(jsonify(donor.to_dict()), 200)
+
