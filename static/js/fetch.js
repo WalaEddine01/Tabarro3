@@ -1,4 +1,19 @@
+
+class Donor {
+    constructor(name, bloodType, phoneNumber , wilayaId, baladiaId ) {
+        this.name = name;
+        this.bloodType = bloodType;
+        this.address = { wilayaId: wilayaId, baladiaId: baladiaId };
+        this.phoneNumber = phoneNumber;
+    }
+}
+
 async function getAllDonors() {
+    const response = await fetch("http://localhost:5000/api/v1/donors");
+    const json = await response.json();
+    return json.map(json=>{
+        return Donor(json.name, json.blood_group, jsong.phone_number , json.WilayaID, json.BaladyaID );
+    })
     return [
         {
             name: "wail",
@@ -31,9 +46,7 @@ async function getAllDonors() {
             phoneNumber: "5",
         },
     ];
-    const response = await fetch("");
-    const json = await response.json();
-    return json;
+
 }
 
 async function getAllWilayas() {
