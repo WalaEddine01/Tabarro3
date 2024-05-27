@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blood Donation Site</title>
+        <link rel="stylesheet" href="../static/css/index.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Blood Donation Logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li onclick='goTo("home")'>Home</a></li>
+                    <li onclick='goTo("stats")'>Stats</li>
+                </ul>
+            </nav>
+            <div class="login" onclick='goTo("login")'>
+                Login
+            </div>
+        </header>
+
+        <main class="main-page" id="main-page"></main>
+
+        <footer>
+            <div class="logo">
+                <img src="logo.png" alt="Blood Donation Logo" />
+            </div>
+            <div class="links">
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="about">
+                <p>About Us Section</p>
+            </div>
+        </footer>
+        <script src="../static/js/fetch.js"></script>
+        <script src="../static/js/search.js" type="module" ></script>
+        <script src="../static/js/stats.js" type="module"></script>
+        
+        
+        <script src="../static/js/route.js" type="module"></script>
+        <script src="../static/js/pagesHandler.js"  type="module"></script>
+    </body>
+    </html>
+    

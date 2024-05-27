@@ -1,0 +1,106 @@
+/* styles.css */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.login a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    height: 120px;
+}
+
+.links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.links ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.about p {
+    font-size: 14px;
+}
+
+/* Additional styling can be added as needed */
+
+.main-page {
+    min-height: calc(100vh - 160px);
+}
+
+@keyframes fadeBlurOut {
+    from {
+        filter: blur(50px);
+    }
+    to {
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeBlurIn {
+    from {
+        filter: blur(0);
+    }
+    to {
+        filter: blur(50px);
+    }
+}
