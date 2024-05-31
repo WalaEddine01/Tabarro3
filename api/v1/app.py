@@ -6,8 +6,10 @@ from os import environ
 from flask import Flask, make_response, jsonify
 from flask_cors import CORS
 from flasgger import Swagger
+import secrets
 
 
+secret_key = secrets.token_hex(24)
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
@@ -16,6 +18,7 @@ app.config['SWAGGER'] = {
     'title': 'Tabarro3 Restful API',
     'uiversion': 3
 }
+app.secret_key = secret_key
 
 Swagger(app)
 
