@@ -8,13 +8,12 @@ from flasgger.utils import swag_from
 from twilio.rest import Client
 from sys import argv
 
+"""
 account_sid = argv[1]
 auth_token = argv[2]
 client = Client(account_sid, auth_token)
 service_sid = argv[3]
-
-
-
+"""
 
 @app_views.route('/donors', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/donor/all_donors.yml', methods=['GET'])
