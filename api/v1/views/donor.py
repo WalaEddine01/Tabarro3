@@ -54,7 +54,7 @@ def delete_donor(donor_id):
     storage.save()
     return make_response(jsonify({}), 200)
 
-
+"""
 @app_views.route('/send-otp', methods=['POST'], strict_slashes=False)
 def send_sms():
     data = request.get_json()
@@ -69,42 +69,32 @@ def send_sms():
         .create(to=phone, channel='sms')
     
     return jsonify({'message': 'OTP sent', 'sid': verification.sid})
+"""
 
 @app_views.route('/donors', methods=['POST'], strict_slashes=False)
-def verify_sms():
+@swag_from('documentation/donor/post_donor.yml', methods=['POST'])
+def post_donor():
+    """
+    Creates a donor
+    """
+    if not request.get_json():
+        abort(400, description="Not a JSON")
+    if 'name' not in request.get_json():
+        abort(400, description="Missing name")
+    if 'blood_group' not in request.get_json():
+        abort(400, description="Missing blod_group")
+    if 'phone_number' not in request.get_json():
+        abort(400, description="Missing phone_number")
+    if 'WilayaID' not in request.get_json():
+        abort(400, description="Missing WilayaID")
+    if 'BaladyaID' not in request.get_json():
+        abort(400, description="Missing BaladyaID")
+
     data = request.get_json()
-    phone = session.get('phone')
-    code = data.get('code')
-    
-    verification_check = client.verify \
-        .v2 \
-        .services(service_sid) \
-        .verification_checks \
-        .create(to=phone, code=code)
-    
-    if verification_check.status == 'approved':
-
-        donor_info = session.get('donor_info')
-        if not donor_info:
-            return jsonify({'message': 'Session expired or invalid'}), 400
-        if 'name' not in donor_info.get_json():
-            abort(400, description="Missing name")
-        if 'blood_group' not in donor_info.get_json():
-            abort(400, description="Missing blod_group")
-        if 'phone_number' not in donor_info.get_json():
-            abort(400, description="Missing phone_number")
-        if 'WilayaID' not in donor_info.get_json():
-            abort(400, description="Missing WilayaID")
-        if 'BaladyaID' not in donor_info.get_json():
-            abort(400, description="Missing BaladyaID")
-
-        donor = Donor(**donor_info)
-        storage.new(donor)
-        storage.save()
-
-        return make_response(jsonify(donor_info), 201)
-    else:
-        return jsonify({'message': 'Invalid OTP'}), 400
+    donor = Donor(**data)
+    storage.new(donor)
+    storage.save()
+    return make_response(jsonify(data), 201)
 
 
 @app_views.route('/donors/<donor_id>', methods=['PUT'], strict_slashes=False)
