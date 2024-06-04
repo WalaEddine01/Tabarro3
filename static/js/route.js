@@ -6,7 +6,7 @@ window.goTo = async (path) => {
     console.log(path);
     const route = routes[path] || routes[404];
     const html = await fetch(route).then((data) => data.text());
-    const main = document.getElementById("main-page");
+    const main = document.getElementById("content");
 
     const duration = 400;
     main.style.animation = `fadeBlurIn ${duration}ms forwards`;

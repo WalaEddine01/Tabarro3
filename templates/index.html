@@ -1,52 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Blood Donation Site</title>
-        <link rel="stylesheet" href="../static/css/index.css" />
-    </head>
-    <body>
-        <header>
-            <div class="logo">
-                <img src="logo.png" alt="Blood Donation Logo" />
-            </div>
-            <nav>
-                <ul>
-                    <li onclick='goTo("home")'>Home</a></li>
-                    <li onclick='goTo("stats")'>Stats</li>
-                </ul>
-            </nav>
-            <div class="login" onclick='goTo("login")'>
-                Login
-            </div>
-        </header>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tabarro3</title>
+   
+   <!-- main css faile -->
+   <link rel="stylesheet" href="css/style.css">
 
-        <main class="main-page" id="main-page"></main>
+   <!-- import font  -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-        <footer>
-            <div class="logo">
-                <img src="logo.png" alt="Blood Donation Logo" />
+   <!-- impport font Awosome moudel -->
+   <link rel="stylesheet" href="css/all.min.css">
+
+   <!-- rotreing javaScript -->
+   <script defer  src="javascript/routing.js"></script>
+
+   <!-- redux librery file -->
+   <script defer src="javascript/redux.mjs"></script>
+
+   <!-- get blood rank -->
+   <script defer src="javascript/rankBlood.js"></script>
+
+   <!-- injected the map -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+   integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+   integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+   crossorigin=""></script>
+</head>
+<body >
+
+
+   <div class="page " >
+
+      <div class="sidebar" id="sidebar" >
+         <div class="fixcontent">
+            <div class="title">
+               <h3 >Tabarro3  <span>donation</span> </h3>
             </div>
-            <div class="links">
-                <ul>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                    <li>Contact Us</li>
-                </ul>
-            </div>
-            <div class="about">
-                <p>About Us Section</p>
-            </div>
-        </footer>
-        <script src="../static/js/fetch.js"></script>
-        <script src="../static/js/search.js" type="module" ></script>
-        <script src="../static/js/stats.js" type="module"></script>
-        <script src="../static/js/register.js" type="module"></script>
-        
-        
-        
-        <script src="../static/js/route.js" type="module"></script>
-    </body>
-    </html>
+            <ul >
+         
+               <li>
+                  <div href="javascript:void(0);" onclick='goTo("home")'>
+                     <i class="fa-solid fa-house fa-fw"></i>
+                     <span>Home</span>
+                  </div>
+               </li>
+         
+               <li>
+                  <div  href="javascript:void(0);" onclick='goTo("search")'>
+                     <i class="fa-solid fa-users-line fa-fw"></i>
+                     <span>Donors</span>
+                  </div >
+               </li>
+               <li>
+                  <div href="javascript:void(0);" onclick='goTo("register")'>
+                     <i class="fa-solid fa-user fa-fw"></i>
+                     <span>register</span>
+                  </div>
+               </li>
+         
+            </ul>
+            
+            
+         </div>
+
+         <div class="menue">
+            <img src="../images/menu.png" alt="" width="30" >
+         </div>
+
+      </div>
+
+      <div class="verticalContent" id="verticalContent">
+
+
+         <div class="header" id="hdrs" style="height: 30px;" data-header>
+         </div>
+
+         <main class="Home" id="content"></main>
+
+         </div>
+
+      </div>
+
+   </div>
+
+   <script src="../static/js/fetch.js"></script>
+   <script src="../static/js/search.js" type="module" ></script>
+   <script src="../static/js/stats.js" type="module"></script>
+   <script src="../static/js/register.js" type="module"></script>
+   <script src="../static/js/route.js" type="module"></script>
+</body>
+</html>
     
+
+
+
+
+
+
+
+
+ 

@@ -40,13 +40,15 @@ export async function setUpSearch() {
         const wilayaName = wilaya ? wilaya.name : "Unknown Wilaya";
         const baladiaName = baladia ? baladia.name : "Unknown Baladia";
 
-        return `<tr>
-            <th>${donor.name}</th>
-            <th>${donor.bloodType}</th>
-            <th>${wilayaName}</th>
-            <th>${baladiaName}</th>
-            <th>${donor.phoneNumber}</th>
-        </tr>`;
+        return `
+        <ul class="unit" id="unit">
+        <li>${donor.name}</li>
+        <li class="active">${donor.bloodType}</li>
+        <li>${wilayaName}</li>
+        <li>${baladiaName}</li>
+        <li>${donor.phoneNumber}</li>
+        </ul>`
+        ;
     }
 
     const allDonors = await getAllDonors();

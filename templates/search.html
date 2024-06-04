@@ -1,43 +1,116 @@
-<div class="content">
-    <div class="filters">
-        <label for="bloodType">Blood Type:</label>
-        <select id="bloodType">
-            <option value="all">ALL</option>
-            <option value="A+">A+</option>
-            <option value="A">A</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-        </select>
+<div class="Donors" id="content">
+    <style>
+        /* start continer */
+        #content {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 91px;
+            background-color: var(--coponentsBg);
+            width: 95%;
+            margin-inline: 10px;
+            border-radius: 12px;
+        }
+        /* start continer */
 
-        <label for="wilaya">Wilaya:</label>
-        <select id="wilaya">
-            <option value="all">ALL</option>
-        </select>
+        .hdrs {
+            margin-top: 20px;
+            padding-inline: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-        <label for="baladia">Baladia:</label>
-        <select id="baladia">
-            <option value="all">ALL</option>
-        </select>
+        #hdrs.hide {
+            transform: translateY(-100%);
+            transition-delay: 0.25s linear;
+        }
 
-        <button id="apply">Apply</button>
+        #hdrs.active {
+            background-color: red;
+        }
+
+        .Donors h2 {
+            color: var(--mainColor);
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+        .Donors h3 {
+            background-color: var(--mainColor);
+            color: var(--coponentsBg);
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .Donors ul,
+        .Donors li {
+            padding: 0;
+            margin: 5px 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .Donors .titels {
+            color: rgb(0, 0, 0, 0.4);
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .Donors ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .Donors li {
+            width: 150px;
+            margin: 10px 0;
+        }
+        .active {
+            color: var(--mainColor);
+        }
+        .Donors .unit {
+            border-top: 1px #333 solid;
+        }
+        .Donors .unit:last-child {
+            border-bottom: 1px #333 solid;
+        }
+    </style>
+    <div class="hdrs">
+        <div class="choiceBox">
+            <label for="bloodType">Blood Type:</label>
+            <select id="bloodType">
+                <option value="all">ALL</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+
+            <label for="wilaya">Wilaya:</label>
+            <select id="wilaya">
+                <option value="all">ALL</option>
+            </select>
+
+            <label for="baladia">Baladia:</label>
+            <select id="baladia">
+                <option value="all">ALL</option>
+            </select>
+        </div>
     </div>
 
-    <div class="search-results">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Blood Type</th>
-                    <th>Wilaya</th>
-                    <th>Baladia</th>
-                    <th>Phone Number</th>
-                </tr>
-            </thead>
-            <tbody id="search-results"></tbody>
-        </table>
-    </div>
+    <button id="apply">Apply</button>
+
+    <ul class="titels">
+        <li>Name</li>
+        <li>BloodType</li>
+        <li>wilayaName</li>
+        <li>baladiaName</li>
+        <li>Phone</li>
+    </ul>
 </div>
