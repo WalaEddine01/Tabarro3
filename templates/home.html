@@ -1,14 +1,38 @@
 <div class="content">
-    <div class="left-content">
-        <h1>Welcome to our Blood Donation Site</h1>
-        <p>
-            This site aims to connect blood donors with those in need. Find a
-            donor by selecting your criteria below:
-        </p>
-            <button id="new-donor-btn" onclick='goTo("register")'>New Donor</button>
-            <button id="find donor" onclick='goTo("search")'>Find a donor now!</button>
-    </div>
-    <div class="right-content">
-        <img src="big_image.png" alt="Blood Donation Image" />
-    </div>
+    <style>
+        #content {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 100px;
+            min-height: 91px;
+            background-color: var(--coponentsBg);
+            width: 95%;
+            margin-inline: 10px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            font-size: 25px;
+        }
+        #content * {
+            margin: 10px;
+        }
+        img {
+            width: 50px;
+        }
+    </style>
+    <h1>Welcome to our Blood Donation Site</h1>
+    <p>
+        This site aims to connect blood donors with those in need. Find a donor
+        by selecting your criteria below:
+    </p>
+    <button id="new-donor-btn" onclick='goTo("register")'>New Donor</button>
+    <button id="find donor" onclick='goTo("search")'>Find a donor now!</button>
+    <!-- <div class="right-content">
+        <img src="images/big_image.png" alt="Blood Donation Image" />
+    </div> -->
 </div>

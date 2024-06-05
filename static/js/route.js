@@ -8,7 +8,7 @@ window.goTo = async (path) => {
     const html = await fetch(route).then((data) => data.text());
     const main = document.getElementById("content");
 
-    const duration = 400;
+    const duration = 500;
     main.style.animation = `fadeBlurIn ${duration}ms forwards`;
 
     // Wait for a short delay (e.g., 500 milliseconds)

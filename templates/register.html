@@ -17,12 +17,11 @@
             color: var(--mainColor);
         }
 
-
-        .container{
+        .container {
             margin: 20px;
         }
 
-        .container *{
+        .container * {
             margin: 10px;
         }
 
@@ -31,35 +30,45 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
-
-
+        .register-form select{
+            margin-left: 0;
+        }
     </style>
     <h1>Register</h1>
     <div class="register-form">
-        <label for="bloodType">Blood Type:</label>
-        <select id="bloodType">
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-        </select>
+        <div class="selection-boxes">
+            <label for="bloodType">Blood Type:</label>
+            <select id="bloodType">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
 
-        <label for="wilaya">Wilaya:</label>
-        <select id="wilaya"></select>
+            <label for="wilaya">Wilaya:</label>
+            <select id="wilaya"></select>
 
-        <label for="baladia">Baladia:</label>
-        <select id="baladia"></select>
+            <label for="baladia">Baladia:</label>
+            <select id="baladia"></select>
+        </div>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <div class="input-fields">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
 
-        <label for="phone-number">Phone:</label>
-        <input type="number" id="phone-number" name="phone-number" required />
+            <label for="phone-number">Phone:</label>
+            <input
+                type="number"
+                id="phone-number"
+                name="phone-number"
+                required />
+        </div>
 
         <button id="register">Register</button>
     </div>

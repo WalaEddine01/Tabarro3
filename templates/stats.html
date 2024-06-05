@@ -1,49 +1,93 @@
-<div id="stats-content">
+<div class="container">
+    <style>
+        /* start continer */
+        #content {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 91px;
+            background-color: var(--coponentsBg);
+            width: 95%;
+            margin-inline: 10px;
+            border-radius: 12px;
+        }
+
+        .active {
+            color: var(--mainColor);
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .container * {
+            margin: 10px;
+        }
+
+        .register-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
     <h1>Statistics</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Blood Type</th>
-                <th>number of Donors</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr id="AB+content">
-                <td>AB+</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>AB-</td>
-                <td id="AB-content"></td>
-            </tr>
-            <tr>
-                <td>A+</td>
-                <td id="A+content"></td>
-            </tr>
-            <tr>
-                <td>A-</td>
-                <td id="A-content"></td>
-            </tr>
-            <tr>
-                <td>B+</td>
-                <td id="B+content"></td>
-            </tr>
-            <tr>
-                <td>B-</td>
-                <td id="B-content"></td>
-            </tr>
-            <tr>
-                <td>O+</td>
-                <td id="O+content"></td>
-            </tr>
-            <tr>
-                <td>O-</td>
-                <td id="O-content"></td>
-            </tr>
-            <tr>
-                <td>total</td>
-                <td id="totalcontent"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="unit-state">
+        <div class="txt">
+           <h3>Units Status</h3>
+           <p>blood needed</p>
+        </div>
+        <div class="blood-rank">
+           <div class="blood-type">
+              <span class="blood">O+</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="o+" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">O-</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="o-" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">A+</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="a+" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">A-</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="a-" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">B+</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="b+" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">B-</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="b-" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">AB+</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="ab+" ></div>
+              </div>
+           </div>
+           <div class="blood-type">
+              <span class="blood">AB-</span>
+              <div class="rank" >
+                 <div class="overlay-blod" id="ab-" ></div>
+              </div>
+           </div>
+        </div>
+    </div>
 </div>

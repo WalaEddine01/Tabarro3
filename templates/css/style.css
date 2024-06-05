@@ -695,6 +695,30 @@ button:hover {
     cursor: pointer;
 }
 
-h3{
-   color: var(--mainColor);
+h1,
+h2,
+h3 {
+    color: var(--mainColor);
+}
+
+.page {
+    min-height: 100vh;
+}
+
+@keyframes fadeBlurOut {
+    from {
+        filter: blur(60px);
+    }
+    to {
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeBlurIn {
+    from {
+        filter: blur(0);
+    }
+    to {
+        filter: blur(60px);
+    }
 }
