@@ -70,11 +70,16 @@
         .active {
             color: var(--mainColor);
         }
-        .Donors .unit {
+        .unit {
             border-top: 1px #333 solid;
+            display: block;
         }
-        .Donors .unit:last-child {
+        .unit:last-child {
             border-bottom: 1px #333 solid;
+        }
+
+        .apply {
+            margin: 10px;
         }
     </style>
     <div class="hdrs">
@@ -104,7 +109,7 @@
         </div>
     </div>
 
-    <button id="apply">Apply</button>
+    <button calss="apply" id="apply">Apply</button>
 
     <ul class="titels">
         <li>Name</li>
@@ -113,4 +118,5 @@
         <li>baladiaName</li>
         <li>Phone</li>
     </ul>
+    <div id="search-results"></div>
 </div>

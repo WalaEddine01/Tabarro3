@@ -42,13 +42,12 @@ export async function setUpSearch() {
 
         return `
         <ul class="unit" id="unit">
-        <li>${donor.name}</li>
-        <li class="active">${donor.bloodType}</li>
-        <li>${wilayaName}</li>
-        <li>${baladiaName}</li>
-        <li>${donor.phoneNumber}</li>
-        </ul>`
-        ;
+            <li>${donor.name}</li>
+            <li class="active">${donor.bloodType}</li>
+            <li>${wilayaName}</li>
+            <li>${baladiaName}</li>
+            <li class="active" >${donor.phoneNumber}</li>
+        </ul>`;
     }
 
     const allDonors = await getAllDonors();
