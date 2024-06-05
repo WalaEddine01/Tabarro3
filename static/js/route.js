@@ -26,7 +26,7 @@ window.goTo = async (path) => {
 
 const routes = {
     404: "./not_found.html",
-        home: "./home.html",
+    home: "./home.html",
     search: "./search.html",
     register: "./register.html",
     login: "./login.html",
@@ -57,3 +57,5 @@ function observeHtmlChanges(targetNode, callback) {
 
     observer.observe(targetNode, config);
 }
+
+

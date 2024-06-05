@@ -36,6 +36,11 @@
             font-weight: 900;
             letter-spacing: 3px;
         }
+
+        a{
+            color: var(--mainColor);
+        }
+
         .Donors h3 {
             background-color: var(--mainColor);
             color: var(--coponentsBg);
@@ -77,10 +82,6 @@
         .unit:last-child {
             border-bottom: 1px #333 solid;
         }
-
-        .apply {
-            margin: 10px;
-        }
     </style>
     <div class="hdrs">
         <div class="choiceBox">
@@ -109,7 +110,12 @@
         </div>
     </div>
 
-    <button calss="apply" id="apply">Apply</button>
+    <button
+        calss="apply"
+        id="apply"
+        style="margin-bottom: 20px; margin-top: 10px">
+        Apply
+    </button>
 
     <ul class="titels">
         <li>Name</li>

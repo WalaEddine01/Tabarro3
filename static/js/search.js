@@ -46,7 +46,8 @@ export async function setUpSearch() {
             <li class="active">${donor.bloodType}</li>
             <li>${wilayaName}</li>
             <li>${baladiaName}</li>
-            <li class="active" >${donor.phoneNumber}</li>
+            <li class="active"  >
+            <a href="tel:+213${donor.phoneNumber}">${donor.phoneNumber}</a></li>
         </ul>`;
     }
 
